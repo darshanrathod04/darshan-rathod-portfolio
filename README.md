@@ -1,75 +1,76 @@
-# React + TypeScript + Vite
+# Darshan Rathod · Java Full Stack Developer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Professional engineering portfolio built with React, TypeScript, Tailwind CSS and Framer Motion.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This repository contains my personal developer portfolio showcasing production-oriented software engineering projects, backend architecture, REST API development and modern frontend engineering.
 
-## React Compiler
+**Live Portfolio:** (Add Vercel URL after deployment)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Featured Projects
 
-## Expanding the ESLint configuration
+### Smart Campus Connect
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Student · College · Company collaboration platform built with Java Spring Boot, React, JWT authentication and MySQL.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Tech Stack:** Java · Spring Boot · React · TypeScript · JWT · MySQL
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Library Management System
 
+Backend-focused REST API implementing CRUD operations, layered MVC architecture and relational database design.
+
+**Tech Stack:** Java · Spring Boot · REST API · MySQL
+
+---
+
+### EduFlow 360
+
+Academic intelligence dashboard featuring learning analytics, reusable React components and responsive UI architecture.
+
+**Tech Stack:** React · TypeScript · Tailwind CSS · Framer Motion
+
+## Technology Stack
+
+### Backend
+
+- Java
+- Spring Boot
+- Spring Security
+- REST APIs
+- JWT Authentication
+- MySQL
+
+### Frontend
+
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Vite
+
+## Local Development
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Build production version:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run build
 ```
+
+## Contact
+
+- **Email:** darshanrathod.dev@gmail.com
+- **GitHub:** github.com/darshanrathod04
+- **LinkedIn:** linkedin.com/in/darshan-rathod-fullstack-developer
+- **Location:** Nagpur, Maharashtra, India
+
+---
+
+Designed & developed by **Darshan Rathod**
