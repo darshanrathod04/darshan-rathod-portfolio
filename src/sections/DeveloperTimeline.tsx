@@ -43,7 +43,7 @@ const timeline = [
     icon: Trophy,
     color: "orange",
   },
-];
+] as const;
 
 const colorClasses = {
   cyan: {
@@ -70,7 +70,7 @@ const colorClasses = {
     text: "text-orange-300",
     line: "from-orange-400",
   },
-};
+} as const;
 
 export default function DeveloperTimeline() {
   return (
@@ -112,13 +112,13 @@ export default function DeveloperTimeline() {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Center Line */}
           <div className="absolute left-7 top-0 h-full w-px bg-gradient-to-b from-cyan-400/60 via-violet-400/30 to-transparent md:left-1/2" />
 
           <div className="space-y-14">
             {timeline.map((item, index) => {
               const Icon = item.icon;
-              const style = colorClasses[item.color];
+              const style =
+                colorClasses[item.color as keyof typeof colorClasses];
 
               const left = index % 2 === 0;
 
@@ -145,11 +145,7 @@ export default function DeveloperTimeline() {
                   </div>
 
                   {/* Card */}
-                  <div
-                    className={`ml-20 w-full md:ml-0 md:w-[46%] ${
-                      left ? "" : ""
-                    }`}
-                  >
+                  <div className="ml-20 w-full md:ml-0 md:w-[46%]">
                     <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-xl transition hover:border-cyan-400/20">
                       <div className="mb-4 flex items-center justify-between">
                         <span
@@ -171,7 +167,6 @@ export default function DeveloperTimeline() {
                         {item.description}
                       </p>
 
-                      {/* Progress Bar */}
                       <div className="mt-6 h-1 overflow-hidden rounded-full bg-white/5">
                         <motion.div
                           initial={{ width: 0 }}
