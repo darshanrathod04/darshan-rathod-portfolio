@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshan Rathod | Full stack Developer</title>
+    <meta name="description" content="Portfolio of Darshan Rathod, Full-Stack Developer specializing in Java, Web Technologies, and Scalable Application Design">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Markdown Parser for AI responses -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Outfit"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6', // Violet
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                            950: '#2e1065',
+                        },
+                        secondary: {
+                            400: '#22d3ee', // Cyan
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                        },
+                        accent: {
+                            400: '#e879f9', // Fuchsia
+                            500: '#d946ef',
+                            600: '#c026d3',
+                        },
+                        slate: {
+                            850: '#1e293b', // Custom Slate between 800 and 900
+                            950: '#020617', // Very dark slate
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                        'float': 'float 8s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 4s infinite',
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(40px, -60px) scale(1.1)' },
+                            '66%': { transform: 'translate(-30px, 30px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 25px rgba(139, 92, 246, 0.5)' },
+                            '50%': { opacity: .85, boxShadow: '0 0 40px rgba(139, 92, 246, 0.8)' },
+                        },
+                        'gradient-x': {
+                            '0%, 100%': { 'background-position': '200% 0' },
+                            '50%': { 'background-position': '0 0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #020617; /* Very Dark Slate */
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.08) 0px, transparent 50%);
+            color: #e2e8f0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Premium Glassmorphism */
+        .glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .glass-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .glass-card:hover {
+            background: rgba(30, 41, 59, 0.7);
+            transform: translateY(-7px) scale(1.01);
+            box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.5), 
+                        0 0 20px rgba(139, 92, 246, 0.2);
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+        
+        .premium-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 
+                inset 0 0 20px rgba(255, 255, 255, 0.02),
+                0 10px 30px -10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #4c1d95, #7c3aed);
+            border-radius: 5px;
+            border: 2px solid #020617;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b5cf6;
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Typing Indicator */
+        .typing-dot {
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        #hero-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #d8b4fe, #818cf8, #7dd3fc);
+        }
+        
+        .text-gradient-animate {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #c084fc, #6366f1, #38bdf8, #c084fc);
+            background-size: 200% auto;
+            animation: gradient-x 8s linear infinite;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-500/30 selection:text-white overflow-x-hidden">
+
+    <!-- Canvas Background for Hero -->
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <span class="text-2xl font-display font-bold text-white tracking-tight group-hover:text-primary-400 transition-colors">
+                        Darshan<span class="text-primary-500 group-hover:text-secondary-400 transition-colors">.Dev</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-300 hover:text-white transition-colors hover:scale-105 transform">About</a>
+                    <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-white transition-colors hover:scale-105 transform">Skills</a>
+                    <a href="#projects" class="text-sm font-medium text-slate-300 hover:text-white transition-colors hover:scale-105 transform">Projects</a>
+                    <a href="#achievements" class="text-sm font-medium text-slate-300 hover:text-white transition-colors hover:scale-105 transform">Achievements</a>
+                    <a href="#contact" class="px-6 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 rounded-full transition-all shadow-lg hover:shadow-primary-500/30 active:scale-95">Contact Me</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-slate-700 absolute w-full shadow-lg backdrop-blur-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 rounded-md">About</a>
+                <a href="#skills" class="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 rounded-md">Skills</a>
+                <a href="#projects" class="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 rounded-md">Projects</a>
+                <a href="#achievements" class="block px-3 py-3 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 rounded-md">Achievements</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-primary-400 font-bold bg-slate-800/50 rounded-md">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+
+            <div class="reveal active">
+                <span class="inline-flex items-center py-1.5 px-4 rounded-full bg-slate-800/60 text-secondary-400 text-sm font-semibold mb-8 tracking-wide border border-slate-700/50 backdrop-blur-md animate-float">
+                    <span class="w-2 h-2 rounded-full bg-secondary-400 mr-2 animate-pulse"></span>
+                    Ready to Build the Future
+                </span>
+
+                <h1 class="text-6xl md:text-8xl font-display font-bold text-white mb-6 tracking-tight leading-[1.1]">
+                    Darshan Rathod <br>
+                    <span class="text-gradient-animate">Full Stack Developer</span>
+                </h1>
+
+                <p class="mt-8 max-w-2xl mx-auto text-xl text-slate-300 mb-12 leading-relaxed font-light tracking-wide">
+                    Designing and building scalable web applications with clean <span class="text-primary-400 font-medium">architecture </span> and <span class="text-secondary-400 font-medium">performance-focused backend</span>systems.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-5">
+                    <a href="#contact" class="group px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-primary-600 to-secondary-500 rounded-full shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all transform hover:scale-105 hover:shadow-[0_0_50px_rgba(139,92,246,0.5)] flex items-center justify-center active:scale-95">
+                        Contact Me <i data-lucide="arrow-right" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <button type="button" onclick="toggleChat()" class="px-8 py-4 text-base font-bold text-slate-200 bg-slate-800/40 border border-slate-600 hover:bg-slate-800/80 hover:text-white rounded-full transition-all backdrop-blur-sm flex items-center justify-center group hover:border-primary-500/50 active:scale-95">
+                        <i data-lucide="sparkles" class="w-5 h-5 mr-2 text-primary-400 group-hover:text-yellow-400 transition-colors"></i> Ask AI About Me
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Decoration Gradients -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-600/10 rounded-full blur-[120px] -z-10 animate-blob"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-secondary-500/10 rounded-full blur-[100px] -z-10"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
+
+                <!-- Image/Visual Column (UPDATED) -->
+                <div class="mb-12 lg:mb-0 reveal relative group perspective-1000">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary-600/40 to-secondary-500/40 rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-700 opacity-50 blur-2xl"></div>
+                    <div class="relative glass-card rounded-2xl p-3 transform transition-transform duration-700 group-hover:rotate-y-2 border-primary-500/20">
+                        <div class="bg-slate-900 rounded-xl aspect-[4/5] overflow-hidden relative group-hover:scale-[1.01] transition-transform duration-700">
+                             <!-- UPDATED IMAGE SOURCE with FALLBACK -->
+                             <img src="darshan.jpeg" onerror="this.onerror=null; this.src='https: //images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';" alt="Darshan Rathod - Professional Profile" class="object-cover w-full h-full relative z-10 opacity-95 group-hover:opacity-100 transition-opacity duration-500">
+
+                             <!-- Overlay gradient for text readability -->
+                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-transparent z-20 opacity-70"></div>
+
+                             <!-- Floating badge -->
+                             <div class="absolute bottom-6 left-6 z-30 premium-glass p-4 rounded-xl flex items-center space-x-4 animate-float">
+                                <div class="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center backdrop-blur-md border border-primary-500/30 shadow-inner">
+                                    <i data-lucide="code-2" class="w-6 h-6 text-primary-300"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Specialization</p>
+                                    <p class="text-lg font-bold text-white">Java Backend</p>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Column -->
+                <div class="reveal">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <span class="h-0.5 w-12 bg-gradient-to-r from-primary-500 to-secondary-500"></span>
+                        <span class="text-primary-400 font-bold uppercase tracking-widest text-sm">About Me</span>
+                    </div>
+                    <h3 class="text-4xl md:text-5xl font-display font-bold text-white mb-8 leading-tight">Driven by Discipline.<br><span class="text-gradient">Powered by Code.</span></h3>
+                    <p class="text-lg text-slate-300 mb-6 leading-relaxed"></p>
+                        I am a dedicated <span class="text-white font-semibold">Full-Stack Developer</span> with hands-on experience in building web applications using <span class="text-primary-300 border-b-2 border-primary-500/30 pb-0.5 font-medium">Java, HTML, CSS, JavaScript</span>, and<span class="text-secondary-300 border-b-2 border-secondary-500/30 pb-0.5 font-medium">Modern frameworks</span> .
+                    <p class="text-lg text-slate-300 mb-10 leading-relaxed">
+                        I enjoy transforming ideas into practical solutions by writing clean, maintainable code and following industry best practices. I continuously improve my skills by working on real-world projects and exploring scalable system design concepts.
+                    </p>
+
+                    <div class="space-y-8">
+                        <!-- Education Timeline Item -->
+                        <div class="flex group pl-2 relative">
+                             <div class="absolute left-[9px] top-2 h-full w-0.5 bg-slate-800 group-hover:bg-gradient-to-b from-primary-500 to-slate-800 transition-colors duration-500"></div>
+                            <div class="flex flex-col items-center mr-8 relative z-10">
+                                <div class="w-5 h-5 rounded-full bg-primary-500 border-4 border-slate-950 shadow-[0_0_15px_rgba(139,92,246,0.6)] group-hover:scale-125 transition-transform duration-300"></div>
+                            </div>
+                            <div class="pb-2">
+                                <p class="text-xs text-primary-400 font-bold mb-1 tracking-wider uppercase">COURSE CURRENTLY PURSUING</p>
+                                <h4 class="text-2xl font-bold text-white group-hover:text-primary-300 transition-colors">B.Tech – Computer Science (Data Science)</h4>
+                                <p class="text-slate-400 mt-2 text-base">Tulsiramji Gaikwad Patil College, Nagpur</p>
+                            </div>
+                        </div>
+                        <!-- Education Timeline Item -->
+                         <div class="flex group pl-2 relative z-10">
+                            <div class="flex flex-col items-center mr-8">
+                                <div class="w-5 h-5 rounded-full bg-slate-600 border-4 border-slate-950 group-hover:bg-secondary-500 transition-colors duration-300 shadow-sm group-hover:shadow-[0_0_15px_rgba(6,182,212,0.6)]"></div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold mb-1 tracking-wider uppercase">COMPLETED</p>
+                                <h4 class="text-2xl font-bold text-white group-hover:text-secondary-300 transition-colors">High School And Secondary</h4>
+                                <p class="text-slate-400 mt-2 text-base">Consistent academic performance with 91% in 10th Standard.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 relative overflow-hidden bg-slate-950/50">
+        <!-- Background elements -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-900/10 via-transparent to-transparent pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-1/2 h-full bg-gradient-to-r from-secondary-900/10 via-transparent to-transparent pointer-events-none"></div>
+
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-secondary-400 font-bold uppercase tracking-widest text-sm mb-2 block">My Arsenal</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-white">Technologies And Tools</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="glass-card p-8 rounded-2xl text-center group reveal hover:border-orange-500/40">
+                    <div class="w-20 h-20 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg border border-white/5 group-hover:bg-orange-500/20 group-hover:border-orange-500/30 relative">
+                        <div class="absolute inset-0 bg-orange-500/20 blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <i data-lucide="coffee" class="w-10 h-10 text-orange-400 group-hover:text-orange-200 relative z-10"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">Java</h4>
+                    <p class="text-sm text-slate-400 group-hover:text-slate-300">Core, OOP, JDBC</p>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="glass-card p-8 rounded-2xl text-center group reveal delay-100 hover:border-blue-500/40">
+                    <div class="w-20 h-20 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg border border-white/5 group-hover:bg-blue-500/20 group-hover:border-blue-500/30 relative">
+                         <div class="absolute inset-0 bg-blue-500/20 blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <i data-lucide="database" class="w-10 h-10 text-blue-400 group-hover:text-blue-200 relative z-10"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">Data Structures</h4>
+                    <p class="text-sm text-slate-400 group-hover:text-slate-300">Logic And Optimization</p>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="glass-card p-8 rounded-2xl text-center group reveal delay-200 hover:border-green-500/40">
+                    <div class="w-20 h-20 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg border border-white/5 group-hover:bg-green-500/20 group-hover:border-green-500/30 relative">
+                         <div class="absolute inset-0 bg-green-500/20 blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <i data-lucide="terminal" class="w-10 h-10 text-green-400 group-hover:text-green-200 relative z-10"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">Development</h4>
+                    <p class="text-sm text-slate-400 group-hover:text-slate-300">NetBeans, VS Code</p>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="glass-card p-8 rounded-2xl text-center group reveal delay-300 hover:border-purple-500/40">
+                    <div class="w-20 h-20 mx-auto bg-slate-800/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg border border-white/5 group-hover:bg-purple-500/20 group-hover:border-purple-500/30 relative">
+                         <div class="absolute inset-0 bg-purple-500/20 blur-xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <i data-lucide="users" class="w-10 h-10 text-purple-400 group-hover:text-purple-200 relative z-10"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">Soft Skills</h4>
+                    <p class="text-sm text-slate-400 group-hover:text-slate-300">Leadership, Teamwork</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 reveal">
+                <div>
+                    <span class="text-accent-400 font-bold uppercase tracking-widest text-sm mb-2 block">Portfolio</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-white">Recent Work</h2>
+                </div>
+                <a href="#" class="hidden md:flex items-center px-6 py-3 rounded-full bg-slate-800 text-white font-medium hover:bg-slate-700 transition-colors border border-slate-700 hover:border-accent-500/50 group">
+                    View GitHub <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Project 1 -->
+                <article class="glass-card rounded-2xl overflow-hidden group reveal hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.3)]">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/30 to-slate-900/50 mix-blend-overlay z-0"></div>
+                        <div class="absolute inset-0 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-700 z-10">
+                            <i data-lucide="server" class="w-20 h-20 text-slate-500/50 group-hover:text-blue-400/80 transition-colors duration-500"></i>
+                        </div>
+                        <!-- Hover overlay -->
+                        <div class="absolute inset-0 bg-blue-900/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm z-20">
+                            <span class="text-white font-bold tracking-wider border-2 border-blue-400/50 px-8 py-3 rounded-full hover:bg-blue-400/20 transition-colors uppercase text-sm">View Project</span>
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-10">
+                        <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">Student Management System</h4>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed line-clamp-3">Developed a CRUD-based Student Management System that allows users to add, update, delete, and manage student records efficiently.
+
+Implemented database connectivity using JDBC and MySQL, ensuring secure and structured data storage.</p>
+                        <div class="flex gap-3 flex-wrap">
+                            <span class="px-4 py-1.5 text-xs font-semibold bg-blue-500/10 text-blue-300 rounded-full border border-blue-500/20">Java</span>
+                            <span class="px-4 py-1.5 text-xs font-semibold bg-slate-700/50 text-slate-300 rounded-full border border-slate-600">MySQL</span>
+                            <span class="px-4 py-1.5 text-xs font-semibold bg-slate-700/50 text-slate-300 rounded-full border border-slate-600">JDBC</span>
+                            <span class="px-4 py-1.5 text-xs font-semibold bg-slate-700/50 text-slate-300 rounded-full border border-slate-600">Apache NetBeans</span>
+
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="glass-card rounded-2xl overflow-hidden group reveal delay-100 hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.3)]">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-slate-900/50 mix-blend-overlay z-0"></div>
+                         <div class="absolute inset-0 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-700 z-10">
+                            <i data-lucide="network" class="w-20 h-20 text-slate-500/50 group-hover:text-purple-400/80 transition-colors duration-500"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-purple-900/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm z-20">
+                            <span class="text-white font-bold tracking-wider border-2 border-purple-400/50 px-8 py-3 rounded-full hover:bg-purple-400/20 transition-colors uppercase text-sm">View Project</span>
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-10">
+                        <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">Socket Chat App</h4>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed line-clamp-3">Real-time communication tool built using Java Networking libraries. Handles client-server architecture and concurrent connections.</p>
+                        <div class="flex gap-3 flex-wrap">
+                            <span class="px-4 py-1.5 text-xs font-semibold bg-purple-500/10 text-purple-300 rounded-full border border-purple-500/20">Java</span>
+                            <span class="px-4 py-1.5 text-xs font-semibold bg-slate-700/50 text-slate-300 rounded-full border border-slate-600">Networking</span>
+                            <span class="px-4 py-1.5 text-xs font-semibold bg-slate-700/50 text-slate-300 rounded-full border border-slate-600">Sockets</span>
+                        </div>
+                    </div>
+                </article>
+
+                 <!-- Project 3 -->
+                 <article class="glass-card rounded-2xl overflow-hidden group reveal delay-200 hover:shadow-[0_20px_40px_-15px_rgba(34,197,94,0.3)]">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-600/30 to-slate-900/50 mix-blend-overlay z-0"></div>
+                         <div class="absolute inset-0 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-700 z-10">
+                            <i data-lucide="cpu" class="w-20 h-20 text-slate-500/50 group-hover:text-green-400/80 transition-colors duration-500"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-green-900/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-sm z-20">
+                            <span class="text-white font-bold tracking-wider border-2 border-green-400/50 px-8 py-3 rounded-full hover:bg-green-400/20 transition-colors uppercase text-sm">View Project</span>
+                        </div>
+                    </div>
+                    <div class="p-8 relative z-10">
+                        <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-green-300 transition-colors">Algorithm Suite</h4>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed line-clamp-3">Collection of optimized algorithms for sorting, searching, and graph traversal, showcasing problem-solving efficiency and complexity analysis.</p>
+                        <div class="flex gap-3 flex-wrap">
+                            <span class="px-4 py-1.5 text-xs font-semibold bg-green-500/10 text-green-300 rounded-full border border-green-500/20">Java</span>
+                            <span class="px-4 py-1.5 text-xs font-semibold bg-slate-700/50 text-slate-300 rounded-full border border-slate-600">DSA</span>
+                            <span class="px-4 py-1.5 text-xs font-semibold bg-slate-700/50 text-slate-300 rounded-full border border-slate-600">Algorithms</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+             <div class="mt-16 text-center md:hidden">
+                 <a href="#" class="inline-flex items-center text-primary-400 font-semibold hover:text-white transition-colors bg-slate-800/50 px-6 py-3 rounded-full border border-slate-700 group">
+                    View More on GitHub <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me (Feature Grid) -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-12 border-slate-700/50 bg-slate-800/30 reveal relative overflow-hidden shadow-2xl">
+                <!-- Background Glow -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-[120px] -z-10"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-[120px] -z-10"></div>
+
+                <div class="text-center mb-16 relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white tracking-tight">Why Collaborate With Me?</h2>
+                </div>
+                <div class="grid md:grid-cols-5 gap-10 text-center relative z-10">
+                     <div class="group">
+                        <div class="w-20 h-20 mx-auto bg-slate-700/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-500 group-hover:text-white text-slate-300 transition-all duration-500 shadow-inner group-hover:shadow-[0_10px_30px_-10px_rgba(139,92,246,0.7)] border border-white/5 group-hover:border-primary-400/50 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-primary-500/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <i data-lucide="anchor" class="w-8 h-8 relative z-10"></i>
+                        </div>
+                        <p class="text-xl font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">Strong Technical Foundation</p>
+                        <p class="text-sm text-slate-400 group-hover:text-slate-300">Solid understanding of backend systems, database, and application architecture.</p>
+                    </div>
+                     <div class="group">
+                        <div class="w-20 h-20 mx-auto bg-slate-700/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary-500 group-hover:text-white text-slate-300 transition-all duration-500 shadow-inner group-hover:shadow-[0_10px_30px_-10px_rgba(6,182,212,0.7)] border border-white/5 group-hover:border-secondary-400/50 relative overflow-hidden">
+                             <div class="absolute inset-0 bg-secondary-500/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <i data-lucide="zap" class="w-8 h-8 relative z-10"></i>
+                        </div>
+                        <p class="text-xl font-bold text-white mb-2 group-hover:text-secondary-300 transition-colors">Fast Execution</p>
+                        <p class="text-sm text-slate-400 group-hover:text-slate-300">Able to quickly understand requirements and translate them into working solutions. </p>
+                    </div>
+                     <div class="group">
+                        <div class="w-20 h-20 mx-auto bg-slate-700/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent-500 group-hover:text-white text-slate-300 transition-all duration-500 shadow-inner group-hover:shadow-[0_10px_30px_-10px_rgba(217,70,239,0.7)] border border-white/5 group-hover:border-accent-400/50 relative overflow-hidden">
+                             <div class="absolute inset-0 bg-accent-500/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <i data-lucide="target" class="w-8 h-8 relative z-10"></i>
+                        </div>
+                        <p class="text-xl font-bold text-white mb-2 group-hover:text-accent-300 transition-colors">Goal-Oriented Development</p>
+                        <p class="text-sm text-slate-400 group-hover:text-slate-300">Focused on delivering results, not just writing code.</p>
+                    </div>
+                     <div class="group">
+                        <div class="w-20 h-20 mx-auto bg-slate-700/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-500 group-hover:text-white text-slate-300 transition-all duration-500 shadow-inner group-hover:shadow-[0_10px_30px_-10px_rgba(249,115,22,0.7)] border border-white/5 group-hover:border-orange-400/50 relative overflow-hidden">
+                             <div class="absolute inset-0 bg-orange-500/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <i data-lucide="brain-circuit" class="w-8 h-8 relative z-10"></i>
+                        </div>
+                        <p class="text-xl font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">Logical And Analytical</p>
+                        <p class="text-sm text-slate-400 group-hover:text-slate-300">Structured problem-solving approach with attention to edge cases. </p>
+                    </div>
+                     <div class="group">
+                        <div class="w-20 h-20 mx-auto bg-slate-700/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500 group-hover:text-white text-slate-300 transition-all duration-500 shadow-inner group-hover:shadow-[0_10px_30px_-10px_rgba(34,197,94,0.7)] border border-white/5 group-hover:border-green-400/50 relative overflow-hidden">
+                             <div class="absolute inset-0 bg-green-500/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <i data-lucide="users" class="w-8 h-8 relative z-10"></i>
+                        </div>
+                        <p class="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">Reliable Team Player</p>
+                        <p class="text-sm text-slate-400 group-hover:text-slate-300">Clear communicator who works well in collaborative development environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-24 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary-400 font-bold uppercase tracking-widest text-sm mb-2 block">Milestones</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white">Achievements And Activities</h2>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Achievement Item -->
+                <div class="glass-card p-8 rounded-2xl flex items-start gap-8 reveal hover:translate-x-3 transition-transform border-l-[6px] border-l-yellow-500/80 shadow-lg group">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-2xl bg-yellow-500/10 text-yellow-500 border border-yellow-500/30 shadow-[0_0_15px_rgba(234,179,8,0.2)] group-hover:bg-yellow-500/20 transition-colors duration-300">
+                            <i data-lucide="award" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3">
+                            <h4 class="text-2xl font-bold text-white group-hover:text-yellow-300 transition-colors">State-Level Ball Badminton Player</h4>
+                            <span class="text-xs font-bold px-3 py-1.5 bg-yellow-500/10 text-yellow-400 rounded-full border border-yellow-500/30 uppercase tracking-wider mt-2 sm:mt-0 self-start sm:self-auto">Certificate Holder</span>
+                        </div>
+                        <p class="text-slate-300 text-base leading-relaxed">Experience competing at state level has strengthened discipline, focus, and performance under pressure — qualities that directly translate to high-stakes software development.</p>
+                    </div>
+                </div>
+
+                <!-- Achievement Item -->
+                <div class="glass-card p-8 rounded-2xl flex items-start gap-8 reveal hover:translate-x-3 transition-transform delay-100 border-l-[6px] border-l-red-500/80 shadow-lg group">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-2xl bg-red-500/10 text-red-500 border border-red-500/30 shadow-[0_0_15px_rgba(239,68,68,0.2)] group-hover:bg-red-500/20 transition-colors duration-300">
+                            <i data-lucide="activity" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-red-300 transition-colors">Sports And Fitness Enthusiast</h4>
+                        <p class="text-slate-300 text-base leading-relaxed">Maintains consistency and discipline, reflected in both personal fitness and professional work ethic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl overflow-hidden border-slate-700/50 reveal shadow-2xl relative">
+                 <!-- Background Glow -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[150px] -z-10"></div>
+
+                <div class="grid lg:grid-cols-2">
+
+                    <!-- Contact Info -->
+                    <div class="p-12 md:p-16 bg-gradient-to-br from-primary-950/90 to-slate-950/90 text-white relative overflow-hidden">
+                        <!-- Decorative Shapes -->
+                        <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary-500/10 rounded-full blur-[80px]"></div>
+                        <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-80 h-80 bg-secondary-500/10 rounded-full blur-[70px]"></div>
+
+                        <h3 class="text-4xl font-display font-bold mb-8 relative z-10">Let's Connect</h3>
+                        <p class="text-slate-300 mb-12 leading-relaxed relative z-10 text-lg">
+                            Looking for a dedicated developer for your team? I'm ready to contribute and collaborate on impactful projects.
+                        </p>
+
+                        <div class="space-y-10 relative z-10">
+                            <div class="flex items-center space-x-6 group">
+                                <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary-500 transition-colors duration-500 shadow-inner group-hover:shadow-[0_0_20px_rgba(139,92,246,0.5)]">
+                                    <i data-lucide="mail" class="w-7 h-7 text-primary-300 group-hover:text-white transition-colors"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Email Me</p>
+                                    <span class="text-slate-200 font-medium text-lg group-hover:text-white transition-colors">darshanmrathod.2005@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-6 group">
+                                <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary-500 transition-colors duration-500 shadow-inner group-hover:shadow-[0_0_20px_rgba(139,92,246,0.5)]">
+                                    <i data-lucide="phone" class="w-7 h-7 text-primary-300 group-hover:text-white transition-colors"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Call Me</p>
+                                    <span class="text-slate-200 font-medium text-lg group-hover:text-white transition-colors">+91 9011228363</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-6 group">
+                                <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary-500 transition-colors duration-500 shadow-inner group-hover:shadow-[0_0_20px_rgba(139,92,246,0.5)]">
+                                    <i data-lucide="map-pin" class="w-7 h-7 text-primary-300 group-hover:text-white transition-colors"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Location</p>
+                                    <span class="text-slate-200 font-medium text-lg group-hover:text-white transition-colors">Nagpur, India</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-6 group">
+                                <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary-500 transition-colors duration-500 shadow-inner group-hover:shadow-[0_0_20px_rgba(139,92,246,0.5)]">
+                                    <i data-lucide="linkedin" class="w-7 h-7 text-primary-300 group-hover:text-white transition-colors"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-1">Social</p>
+                                    <a href="https://www.linkedin.com/in/darshan-rathod-a8aa8728b" target="_blank" class="text-slate-200 hover:text-white hover:underline transition-all font-medium text-lg group-hover:text-white">LinkedIn Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="p-12 md:p-16 bg-slate-900/40 backdrop-blur-md">
+                        <form id="contactForm" class="space-y-8">
+                            <div class="grid grid-cols-2 gap-8">
+                                <div class="group">
+                                    <label for="name" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group-hover:text-primary-400 transition-colors">Name</label>
+                                    <input type="text" id="name" class="w-full px-5 py-4 rounded-xl bg-slate-950/50 border border-slate-800 text-white focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 outline-none transition-all placeholder-slate-600 hover:border-slate-700" placeholder="Your Name" required>
+                                </div>
+                                <div class="group">
+                                    <label for="email" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group-hover:text-primary-400 transition-colors">Email</label>
+                                    <input type="email" id="email" class="w-full px-5 py-4 rounded-xl bg-slate-950/50 border border-slate-800 text-white focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 outline-none transition-all placeholder-slate-600 hover:border-slate-700" placeholder="name@company.com" required>
+                                </div>
+                            </div>
+
+                            <div class="group">
+                                <label for="subject" class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 group-hover:text-primary-400 transition-colors">Subject</label>
+                                <input type="text" id="subject" class="w-full px-5 py-4 rounded-xl bg-slate-950/50 border border-slate-800 text-white focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 outline-none transition-all placeholder-slate-600 hover:border-slate-700" placeholder="Project Inquiry" required>
+                            </div>
+
+                            <div class="group">
+                                <div class="flex justify-between items-center mb-3">
+                                    <label for="message" class="block text-xs font-bold text-slate-400 uppercase tracking-wider group-hover:text-primary-400 transition-colors">Message</label>
+                                    <button type="button" onclick="rewriteMessage()" id="ai-rewrite-btn" class="text-xs flex items-center text-secondary-400 hover:text-secondary-300 font-bold transition-colors bg-secondary-500/10 px-3 py-1.5 rounded-full border border-secondary-500/20 hover:bg-secondary-500/20">
+                                        <i data-lucide="sparkles" class="w-3.5 h-3.5 mr-1.5"></i> ✨ AI Polish
+                                    </button>
+                                </div>
+                                <textarea id="message" rows="5" class="w-full px-5 py-4 rounded-xl bg-slate-950/50 border border-slate-800 text-white focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 outline-none transition-all resize-none placeholder-slate-600 hover:border-slate-700" placeholder="How can I help you?" required></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full px-8 py-4 text-white font-bold text-lg bg-gradient-to-r from-primary-600 to-secondary-500 rounded-xl hover:from-primary-500 hover:to-secondary-400 transition-all shadow-xl shadow-primary-500/25 transform hover:-translate-y-1 active:scale-95 flex justify-center items-center group">
+                                <span>Send Message</span>
+                                <i data-lucide="send" class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Notification -->
+    <div id="notification" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1)">
+        <div class="glass-card text-white px-8 py-6 rounded-2xl shadow-2xl flex items-center space-x-4 border-l-[6px] border-l-green-500 bg-slate-900/80 backdrop-blur-xl">
+            <div class="bg-green-500/20 p-2 rounded-full shadow-inner shadow-green-500/20 border border-green-500/30">
+                <i data-lucide="check-circle" class="w-6 h-6 text-green-500"></i>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg">Message Sent Successfully!</h4>
+                <p class="text-sm text-slate-300 mt-1">Thank you. I'll get back to you shortly.</p>
+            </div>
+            <button type="button" onclick="closeNotification()" class="ml-6 text-slate-500 hover:text-white transition-colors p-1 hover:bg-white/10 rounded-full">
+                <i data-lucide="x" class="w-5 h-5"></i> model
+            </button>
+        </div>
+    </div>
+
+    <!-- AI Chatbot Widget -->
+    <div id="chatbot-widget" class="fixed bottom-24 right-5 z-40 hidden flex-col w-96 md:w-[28rem] glass-card rounded-2xl shadow-2xl overflow-hidden transform transition-all origin-bottom-right border border-primary-500/30 bg-slate-900/80 backdrop-blur-xl">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-primary-950/90 to-slate-950/90 p-5 flex justify-between items-center border-b border-white/10">
+            <div class="flex items-center space-x-4">
+                <div class="w-10 h-10 bg-primary-600/30 rounded-xl flex items-center justify-center text-primary-400 border border-primary-500/50 shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-base">AI Assistant ( UI Prototype )</h3>
+                    <p class="text-slate-300 text-[11px] uppercase tracking-wider font-semibold">Powered by Gemini</p>
+                </div>
+            </div>
+            <button type="button" onclick="toggleChat()" class="text-slate-400 hover:text-white transition-colors p-1.5 hover:bg-white/10 rounded-full">
+                <i data-lucide="x" class="w-5 h-5"></i> header
+            </button>
+        </div>
+
+        <!-- Chat Area -->
+        <div id="chat-messages" class="h-96 overflow-y-auto p-5 bg-slate-950/50 space-y-5">
+            <!-- Initial Message -->
+            <div class="flex items-start animate-fade-in-up">
+                <div class="bg-slate-800/80 border border-slate-700/80 text-slate-200 rounded-2xl rounded-tl-none p-4 shadow-sm text-sm max-w-[85%] leading-relaxed">
+                    Hi there! 👋 I'm AI assistant. What would you like to know?
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-4 bg-slate-900/90 border-t border-white/10 flex items-center gap-3">
+            <input type="text" id="chat-input" class="flex-1 bg-slate-950 border border-slate-800 rounded-full px-5 py-3 text-sm text-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 placeholder-slate-500 transition-all shadow-inner" placeholder="Type your question..." onkeypress="handleEnter(event)">
+            <button onclick="sendChatMessage()" id="chat-send-btn" class="p-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed active:scale-95 hover:scale-105">
+                <i data-lucide="send-horizontal" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button onclick="toggleChat()" id="chat-toggle-btn" class="fixed bottom-6 right-6 z-40 w-16 h-16 bg-gradient-to-br from-primary-600 to-secondary-600 text-white rounded-full shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:shadow-[0_0_50px_rgba(139,92,246,0.7)] hover:scale-110 transition-all duration-300 flex items-center justify-center group animate-pulse-glow border-2 border-white/20">
+        <i data-lucide="message-circle" class="w-8 h-8 group-hover:rotate-12 transition-transform"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-16 relative overflow-hidden">
+         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-primary-500/50 to-transparent"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="mb-8">
+                 <span class="text-2xl font-display font-bold text-white tracking-tight">
+                        Darshan<span class="text-primary-500">.Dev</span>
+                </span>
+            </div>
+            <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                Building scalable digital solutions with precision, discipline, and purpose.
+            </p>
+            <p class="text-slate-500 text-sm">
+                &copy; <span id="year"></span> Darshan Rathod. <br class="md:hidden"> Crafted with <span class="text-primary-400 font-medium">Java</span> principles And <span class="text-secondary-400 font-medium">AI</span> integration.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // --- CONFIGURATION ---
+        const apiKey = ""; // API Key handled by environment
+        const systemPrompt = `
+You are a helpful and professional AI virtual assistant for Darshan Rathod's portfolio.
+Answer based on:
+- **Role:** Aspiring Software Developer (Java/Data Science).
+- **Education:** B.Tech CS (Pursuing), Nagpur.
+- **Skills:** Java (Core/JDBC), MySQL, OOP, Data Structures.
+- **Projects:** Student Info System, Socket Chat App, Algorithm Suite.
+- **Traits:** Disciplined sportsman (Badminton/Volleyball), Team Player, Fast Learner.
+Keep answers concise, professional, and friendly. Do not make up information.
+`;
+
+        // --- ENHANCED CANVAS ANIMATION (SUBTLE & ELEGANT) ---
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        const mouse = { x: null, y: null, radius: 200 };
+
+        // Resize Canvas
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+            initParticles();
+        }
+        window.addEventListener('resize', resize);
+        
+        // Track Mouse
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+        
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        })
+
+        // Particle Class
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.3; 
+                this.vy = (Math.random() - 0.5) * 0.3;
+                this.size = Math.random() * 1.5 + 0.5;
+                // Subtle, elegant colors
+                const colors = ['rgba(139, 92, 246, 0.8)', 'rgba(6, 182, 212, 0.8)', 'rgba(255, 255, 255, 0.6)'];
+                this.baseColor = colors[Math.floor(Math.random() * colors.length)];
+                this.color = this.baseColor;
+                this.baseX = this.x;
+                this.baseY = this.y;
+                this.density = (Math.random() * 20) + 5;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Wrap around edges for seamless flow
+                if (this.x < 0) this.x = width;
+                if (this.x > width) this.x = 0;
+                if (this.y < 0) this.y = height;
+                if (this.y > height) this.y = 0;
+
+                // Mouse Interaction - Gentle Repulsion/Attraction
+                if (mouse.x != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const maxDistance = mouse.radius;
+                        const force = (maxDistance - distance) / maxDistance;
+                        const directionX = forceDirectionX * force * this.density * 0.05;
+                        const directionY = forceDirectionY * force * this.density * 0.05;
+                        
+                        this.x -= directionX; // Repel slightly
+                        this.y -= directionY;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        // Create Particles
+        function initParticles() {
+            particles = [];
+            // Reduced count for a cleaner look
+            const particleCount = Math.floor(width * height / 15000); 
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        // Animation Loop
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            particles.forEach((p, index) => {
+                p.update();
+                p.draw();
+
+                // Draw Connections - Finer lines
+                for (let j = index + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p.x - p2.x;
+                    const dy = p.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        // Subtle gradient line
+                        const gradient = ctx.createLinearGradient(p.x, p.y, p2.x, p2.y);
+                        gradient.addColorStop(0, p.baseColor.replace('0.8)', '0.1)'));
+                        gradient.addColorStop(1, p2.baseColor.replace('0.8)', '0.1)'));
+                        
+                        ctx.strokeStyle = gradient;
+                        ctx.lineWidth = 0.2;
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+                
+                // Connect to Mouse - Subtle
+                if (mouse.x != null) {
+                    const dx = p.x - mouse.x;
+                    const dy = p.y - mouse.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                     if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 - dist/1200})`; 
+                        ctx.lineWidth = 0.3;
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+
+        resize();
+        animate();
+
+
+        // --- UI LOGIC ---
+
+        // Scroll Reveal
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Icons & Date
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: pos, behavior: "smooth" });
+                }
+            });
+        });
+
+        // Contact Form
+        const form = document.getElementById('contactForm');
+        const notification = document.getElementById('notification');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mr-2"></i><span>Sending...</span>';
+            btn.disabled = true;
+            lucide.createIcons(); // Refresh icons for loader
+
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.disabled = false;
+                form.reset();
+                showNotification();
+                lucide.createIcons(); // Restore icon
+            }, 2000);
+        });
+
+        function showNotification() {
+            notification.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(closeNotification, 5000);
+        }
+        function closeNotification() {
+            notification.classList.add('translate-y-20', 'opacity-0');
+        }
+
+        // --- GEMINI AI FUNCTIONS ---
+        
+        async function rewriteMessage() {
+            const textarea = document.getElementById('message');
+            const btn = document.getElementById('ai-rewrite-btn');
+            const userText = textarea.value.trim();
+
+            if (!userText) {
+                alert("Please type a rough draft first!");
+                return;
+            }
+
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i data-lucide="loader-2" class="w-3.5 h-3.5 mr-1.5 animate-spin"></i> Polishing...';
+            btn.disabled = true;
+            textarea.disabled = true;
+            lucide.createIcons();
+
+            const prompt = `Rewrite this professional message for a developer portfolio contact form. Make it concise, polite, and professional:\n"${userText}"`;
+
+            try {
+                const response = await callGemini(prompt);
+                textarea.value = response.trim();
+            } catch (error) {
+                console.error("AI Error:", error);
+                alert("AI service unavailable momentarily.");
+            } finally {
+                btn.innerHTML = originalHTML;
+                btn.disabled = false;
+                textarea.disabled = false;
+                lucide.createIcons();
+            }
+        }
+
+        // Chatbot Logic
+        const chatWidget = document.getElementById('chatbot-widget');
+        const chatToggleBtn = document.getElementById('chat-toggle-btn');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const chatSendBtn = document.getElementById('chat-send-btn');
+        let isChatOpen = false;
+
+        function toggleChat() {
+            isChatOpen = !isChatOpen;
+            if (isChatOpen) {
+                chatWidget.classList.remove('hidden');
+                chatToggleBtn.style.display = 'none';
+                setTimeout(() => chatInput.focus(), 100);
+            } else {
+                chatWidget.classList.add('hidden');
+                chatToggleBtn.style.display = 'flex';
+            }
+        }
+
+        function handleEnter(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        }
+
+        async function sendChatMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'user');
+            chatInput.value = '';
+            chatSendBtn.disabled = true;
+
+            const loadingId = addLoadingBubble();
+            const fullPrompt = `${systemPrompt}\n\nUser Question: ${text}`;
+
+            try {
+                const response = await callGemini(fullPrompt);
+                removeMessage(loadingId);
+                addMessage(response, 'bot');
+            } catch (error) {
+                removeMessage(loadingId);
+                addMessage("AI assistant is currently running in demo mode. Full backend integration coming soon.", 'bot');
+            } finally {
+                chatSendBtn.disabled = false;
+                chatInput.focus();
+            }
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = `flex ${sender === 'user' ? 'justify-end' : 'items-start'} animate-fade-in-up`;
+            
+            const bubble = document.createElement('div');
+            if (sender === 'user') {
+                bubble.className = 'bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-2xl rounded-tr-none p-4 shadow-lg text-sm max-w-[85%] leading-relaxed';
+                bubble.textContent = text;
+            } else {
+                bubble.className = 'bg-slate-800/80 border border-slate-700/80 text-slate-200 rounded-2xl rounded-tl-none p-4 shadow-lg text-sm max-w-[85%] prose prose-sm prose-invert leading-relaxed';
+                bubble.innerHTML = marked.parse(text);
+            }
+
+            div.appendChild(bubble);
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addLoadingBubble() {
+            const id = 'loading-' + Date.now();
+            const div = document.createElement('div');
+            div.id = id;
+            div.className = 'flex items-start';
+            div.innerHTML = `
+                <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl rounded-tl-none p-4 shadow-lg flex space-x-1.5">
+                    <div class="w-2 h-2 bg-slate-500 rounded-full typing-dot"></div>
+                    <div class="w-2 h-2 bg-slate-500 rounded-full typing-dot"></div>
+                    <div class="w-2 h-2 bg-slate-500 rounded-full typing-dot"></div>
+                </div>
+            `;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return id;
+        }
+
+        function removeMessage(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        async function callGemini(promptText) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const payload = { contents: [{ parts: [{ text: promptText }] }] };
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (!response.ok) throw new Error(`API Error: ${response.status}`);
+            const data = await response.json();
+            return data.candidates[0].content.parts[0].text;
+        }
+    </script>
+</body>
+</html>
